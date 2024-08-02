@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CollectionTableViewCell: UITableViewCell {
+class CollectionViewTableViewCell: UITableViewCell {
     
     // MARK: - Variables
-    static let identifier = "CollectionTableViewCell"
+    static let identifier = "CollectionViewTableViewCell"
     
     // MARK: - UI Components
     private let collectionView: UICollectionView = {
@@ -19,6 +19,7 @@ class CollectionTableViewCell: UITableViewCell {
         layout.itemSize = CGSize(width: 250, height: 200)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -26,10 +27,14 @@ class CollectionTableViewCell: UITableViewCell {
     // MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        collectionView.backgroundColor = .systemMint
         contentView.addSubview(collectionView)
         
-        //collectionViewDelegate()
+        collectionViewDelegate()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        collectionView.frame = contentView.bounds
     }
     
     required init?(coder: NSCoder) {
@@ -37,19 +42,24 @@ class CollectionTableViewCell: UITableViewCell {
     }
     
     // MARK: - Functions
-//    private func collectionViewDelegate() {
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-//    }
+    /// collectcionView Delegate 설정 함수
+    private func collectionViewDelegate() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
 }
 
 // MARK: - Extensions
-//extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 10
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//    }
-//}
+extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemGreen
+        return cell
+
+    }
+}
