@@ -22,25 +22,25 @@ class MainTabBarViewController: UITabBarController {
         
         let homeVC = UINavigationController(rootViewController: HomeViewController())
         let searchVC = UINavigationController(rootViewController: SearchViewController())
-        let favoriteVC = UINavigationController(rootViewController: FavoriteViewController())
+        let chatVC = UINavigationController(rootViewController: ChatViewController())
         let planVC = UINavigationController(rootViewController: PlanViewController())
         let profileVC = UINavigationController(rootViewController: ProfileViewController())
         
         homeVC.tabBarItem.image = UIImage(systemName: "house")
         searchVC.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        favoriteVC.tabBarItem.image = UIImage(systemName: "bookmark")
+        chatVC.tabBarItem.image = UIImage(systemName: "paperplane")
         planVC.tabBarItem.image = UIImage(systemName: "calendar")
         profileVC.tabBarItem.image = UIImage(systemName: "person")
         
         homeVC.title = "Home"
         searchVC.title = "Search"
-        favoriteVC.title = "Bookmark"
+        chatVC.title = "Chat"
         planVC.title = "Plan"
         profileVC.title = "Profile"
         
         tabBar.tintColor = .label
         // tabBar.backgroundColor = .systemBackground
         
-        setViewControllers([homeVC, searchVC, planVC, favoriteVC, profileVC], animated: true)
+        setViewControllers([homeVC, searchVC, planVC, chatVC, profileVC], animated: true)
     }
 }

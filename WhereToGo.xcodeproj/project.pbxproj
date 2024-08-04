@@ -18,7 +18,7 @@
 		9DAC121D2C5AD762005E90D9 /* WhereToGoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC121C2C5AD762005E90D9 /* WhereToGoUITestsLaunchTests.swift */; };
 		9DAC12312C5AE19C005E90D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12302C5AE19C005E90D9 /* HomeViewController.swift */; };
 		9DAC12332C5AE1A7005E90D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12322C5AE1A7005E90D9 /* SearchViewController.swift */; };
-		9DAC12352C5AE211005E90D9 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12342C5AE211005E90D9 /* FavoriteViewController.swift */; };
+		9DAC12352C5AE211005E90D9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12342C5AE211005E90D9 /* ChatViewController.swift */; };
 		9DAC12372C5AE21E005E90D9 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12362C5AE21E005E90D9 /* PlanViewController.swift */; };
 		9DAC12392C5AE256005E90D9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12382C5AE256005E90D9 /* ProfileViewController.swift */; };
 		9DAC123C2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC123B2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift */; };
@@ -58,7 +58,7 @@
 		9DAC121C2C5AD762005E90D9 /* WhereToGoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToGoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9DAC12302C5AE19C005E90D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9DAC12322C5AE1A7005E90D9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		9DAC12342C5AE211005E90D9 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		9DAC12342C5AE211005E90D9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9DAC12362C5AE21E005E90D9 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		9DAC12382C5AE256005E90D9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9DAC123B2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			children = (
 				9DAC12302C5AE19C005E90D9 /* HomeViewController.swift */,
 				9DAC12322C5AE1A7005E90D9 /* SearchViewController.swift */,
-				9DAC12342C5AE211005E90D9 /* FavoriteViewController.swift */,
+				9DAC12342C5AE211005E90D9 /* ChatViewController.swift */,
 				9DAC12362C5AE21E005E90D9 /* PlanViewController.swift */,
 				9DAC12382C5AE256005E90D9 /* ProfileViewController.swift */,
 			);
@@ -354,7 +354,7 @@
 				9DAC12392C5AE256005E90D9 /* ProfileViewController.swift in Sources */,
 				9DAC12312C5AE19C005E90D9 /* HomeViewController.swift in Sources */,
 				9DAC11FB2C5AD760005E90D9 /* MainTabBarViewController.swift in Sources */,
-				9DAC12352C5AE211005E90D9 /* FavoriteViewController.swift in Sources */,
+				9DAC12352C5AE211005E90D9 /* ChatViewController.swift in Sources */,
 				9DAC123C2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift in Sources */,
 				9DAC11F72C5AD760005E90D9 /* AppDelegate.swift in Sources */,
 				9DAC12372C5AE21E005E90D9 /* PlanViewController.swift in Sources */,

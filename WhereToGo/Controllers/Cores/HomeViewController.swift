@@ -16,6 +16,13 @@ class HomeViewController: UIViewController {
         return table
     }()
     
+    // 상태 표시줄 배경색 뷰
+    private let statusBarBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground// 원하는 색상으로 설정
+        return view
+    }()
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -26,6 +33,13 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 440))
         homeFeedTable.tableHeaderView = headerView
         
+        // 상태 표시줄 배경색 뷰 추가
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first(where: { $0.isKeyWindow }) {
+            window.addSubview(statusBarBackgroundView)
+            window.bringSubviewToFront(statusBarBackgroundView)
+        }
+        
         homeFeedTableDelegate()
         configureNaviBar()
     }
@@ -34,6 +48,10 @@ class HomeViewController: UIViewController {
         
         let padding: CGFloat = 5
         homeFeedTable.frame = view.bounds.inset(by: UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
+        
+        // 상태 표시줄 배경색 뷰의 프레임 설정
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        statusBarBackgroundView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: statusBarHeight)
     }
     
     // MARK: - Functions
@@ -45,11 +63,32 @@ class HomeViewController: UIViewController {
     
     /// navigationBarItems 설정 함수
     private func configureNaviBar() {
+        
+        // 로고 이미지를 설정
+        let originalImage = UIImage(named: "WhereToGoLogo.png")
+        let scaledSize = CGSize(width: 40, height: 40) // 시스템 버튼과 비슷한 크기
+        
+        UIGraphicsBeginImageContextWithOptions(scaledSize, false, 0.0)
+        originalImage?.draw(in: CGRect(origin: .zero, size: scaledSize))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // 원본 이미지 색상을 유지하기 위해 렌더링 모드를 .alwaysOriginal로 설정
+        let originalColorImage = scaledImage?.withRenderingMode(.alwaysOriginal)
+        
+        let barButton = UIBarButtonItem(image: originalColorImage, style: .plain, target: self, action: #selector(didTappedLogo))
+        navigationItem.leftBarButtonItem = barButton
+        
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: self, action: #selector(didTappedAlarm)),
-            UIBarButtonItem(image: UIImage(systemName: "paperplane"), style: .plain, target: self, action: #selector(didTappedChat))
+            UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(didTappedBookmark))
         ]
         navigationController?.navigationBar.tintColor = .label
+    }
+    
+    /// navigaitonbarbutton 중에 logo 함수
+    @objc private func didTappedLogo() {
+        print("didTappedLogo() - Tapped")
     }
     
     /// navigationbarbutton 중에 Alarm 버튼 함수
@@ -58,8 +97,8 @@ class HomeViewController: UIViewController {
     }
     
     /// navigationbarbutton 중에 Chat 버튼 함수
-    @objc private func didTappedChat() {
-        print("didTappedChat() - Tapped")
+    @objc private func didTappedBookmark() {
+        print("didTappedBookmark() - Tapped")
     }
 }
 
@@ -88,9 +127,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 40
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.backgroundColor = .clear  // 배경색을 투명하게 설정
-//        return headerView  // 모든 섹션에 대해 빈 뷰를 반환합니다
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let defaultOffset = view.safeAreaInsets.top
+        let offset = scrollView.contentOffset.y + defaultOffset
+        
+        navigationController?.navigationBar.transform = .init(translationX: 0, y: -offset)
+    }
 }
