@@ -44,7 +44,7 @@ class HeroHeaderUIView: UIView {
         super.layoutSubviews()
 
         let padding: CGFloat = 0
-        let bottomPadding: CGFloat = 40 // 테이블뷰 헤더 아래 여백
+        let bottomPadding: CGFloat = 20 // 테이블뷰 헤더 아래 여백
         scrollView.frame = bounds.inset(by: UIEdgeInsets(top: padding, left: padding, bottom: padding + bottomPadding, right: padding))
 
         pageControl.frame = CGRect(x: 0, y: bounds.height - 70, width: bounds.width, height: 30)
