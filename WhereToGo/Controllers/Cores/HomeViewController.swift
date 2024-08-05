@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
+        table.backgroundColor = .systemBackground
         return table
     }()
     
@@ -45,6 +46,8 @@ class HomeViewController: UIViewController {
         
         homeFeedTableDelegate()
         configureNaviBar()
+        
+        getAttractionsData()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -102,6 +105,21 @@ class HomeViewController: UIViewController {
     /// navigationbarbutton 중에 Chat 버튼 함수
     @objc private func didTappedBookmark() {
         print("didTappedBookmark() - Tapped")
+    }
+    
+    private func getAttractionsData() {
+        APICaller.shared.getAttractions { attractions in
+            if let attractions = attractions {
+                for attraction in attractions {
+                    print("Title: \(attraction.title)")
+                    print("Address: \(attraction.addr1)")
+                    print("Image1: \(attraction.firstimage)")
+                    print("Image2: \(attraction.firstimage2)")
+                }
+            } else {
+                print("Failed to fetch attractions")
+            }
+        }
     }
 }
 

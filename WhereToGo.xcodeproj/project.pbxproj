@@ -23,6 +23,8 @@
 		9DAC12392C5AE256005E90D9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12382C5AE256005E90D9 /* ProfileViewController.swift */; };
 		9DAC123C2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC123B2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift */; };
 		9DAC123F2C5D2179005E90D9 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC123E2C5D2179005E90D9 /* HeroHeaderUIView.swift */; };
+		9DAC12412C607B50005E90D9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12402C607B50005E90D9 /* APICaller.swift */; };
+		9DAC12442C609CC8005E90D9 /* AttractionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC12432C609CC8005E90D9 /* AttractionModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		9DAC12382C5AE256005E90D9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9DAC123B2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		9DAC123E2C5D2179005E90D9 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		9DAC12402C607B50005E90D9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		9DAC12432C609CC8005E90D9 /* AttractionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionModels.swift; sourceTree = "<group>"; };
+		9DAC12462C60A582005E90D9 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,8 @@
 		9DAC11F52C5AD760005E90D9 /* WhereToGo */ = {
 			isa = PBXGroup;
 			children = (
+				9DAC12452C60A54A005E90D9 /* Configurations */,
+				9DAC12422C609C6E005E90D9 /* Managers */,
 				9DAC122C2C5ADE01005E90D9 /* Resources */,
 				9DAC122B2C5ADDF4005E90D9 /* Models */,
 				9DAC122A2C5ADDEE005E90D9 /* Views */,
@@ -162,6 +169,7 @@
 		9DAC122B2C5ADDF4005E90D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9DAC12432C609CC8005E90D9 /* AttractionModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +226,22 @@
 				9DAC123E2C5D2179005E90D9 /* HeroHeaderUIView.swift */,
 			);
 			path = TableHeaderView;
+			sourceTree = "<group>";
+		};
+		9DAC12422C609C6E005E90D9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9DAC12402C607B50005E90D9 /* APICaller.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9DAC12452C60A54A005E90D9 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				9DAC12462C60A582005E90D9 /* Config.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +375,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DAC12332C5AE1A7005E90D9 /* SearchViewController.swift in Sources */,
+				9DAC12442C609CC8005E90D9 /* AttractionModels.swift in Sources */,
 				9DAC12392C5AE256005E90D9 /* ProfileViewController.swift in Sources */,
 				9DAC12312C5AE19C005E90D9 /* HomeViewController.swift in Sources */,
 				9DAC11FB2C5AD760005E90D9 /* MainTabBarViewController.swift in Sources */,
 				9DAC12352C5AE211005E90D9 /* ChatViewController.swift in Sources */,
 				9DAC123C2C5C8D98005E90D9 /* CollectionViewTableViewCell.swift in Sources */,
 				9DAC11F72C5AD760005E90D9 /* AppDelegate.swift in Sources */,
+				9DAC12412C607B50005E90D9 /* APICaller.swift in Sources */,
 				9DAC12372C5AE21E005E90D9 /* PlanViewController.swift in Sources */,
 				9DAC123F2C5D2179005E90D9 /* HeroHeaderUIView.swift in Sources */,
 				9DAC12012C5AD760005E90D9 /* WhereToGo.xcdatamodeld in Sources */,
@@ -410,6 +436,7 @@
 /* Begin XCBuildConfiguration section */
 		9DAC121E2C5AD762005E90D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -473,6 +500,7 @@
 		};
 		9DAC121F2C5AD762005E90D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -529,6 +557,7 @@
 		};
 		9DAC12212C5AD762005E90D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -537,7 +566,6 @@
 				DEVELOPMENT_TEAM = P9NXT375QP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhereToGo/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -558,6 +586,7 @@
 		};
 		9DAC12222C5AD762005E90D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,7 +595,6 @@
 				DEVELOPMENT_TEAM = P9NXT375QP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhereToGo/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -587,6 +615,7 @@
 		};
 		9DAC12242C5AD762005E90D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -607,6 +636,7 @@
 		};
 		9DAC12252C5AD762005E90D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -627,6 +657,7 @@
 		};
 		9DAC12272C5AD762005E90D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -645,6 +676,7 @@
 		};
 		9DAC12282C5AD762005E90D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAC12462C60A582005E90D9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

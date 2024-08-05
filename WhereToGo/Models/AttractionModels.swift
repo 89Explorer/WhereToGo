@@ -29,3 +29,4 @@ struct Attraction: Codable {
     let firstimage2: String
     let title: String
 }
+
